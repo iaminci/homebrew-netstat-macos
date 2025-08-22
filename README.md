@@ -12,7 +12,7 @@ Finally use `sudo netstat -tulpn` on macOS just like on Linux! This tool provide
 
 ```bash
 # Install
-brew tap yourusername/netstat-macos
+brew tap iaminci/netstat-macos
 brew install netstat-macos
 
 # Use exactly like Linux
@@ -29,7 +29,7 @@ sudo netstat -tulpn
 
 ```bash
 # Add the tap
-brew tap yourusername/netstat-macos
+brew tap iaminci/netstat-macos
 
 # Install the package
 brew install netstat-macos
@@ -42,7 +42,7 @@ netstat --version
 
 ```bash
 # Download and install directly
-curl -fsSL https://raw.githubusercontent.com/yourusername/homebrew-netstat-macos/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/iaminci/homebrew-netstat-macos/main/install.sh | bash
 ```
 
 ## 🖥️ Usage
@@ -197,7 +197,7 @@ netstat --version
 brew uninstall netstat-macos
 
 # Remove the tap
-brew untap yourusername/netstat-macos
+brew untap iaminci/netstat-macos
 ```
 
 ## 🔄 Updates
@@ -215,15 +215,15 @@ brew outdated
 
 We welcome contributions! Here's how you can help:
 
-1. **Report Issues**: Found a bug? [Open an issue](https://github.com/yourusername/homebrew-netstat-macos/issues)
-2. **Feature Requests**: Want a new feature? [Request it here](https://github.com/yourusername/homebrew-netstat-macos/issues)
+1. **Report Issues**: Found a bug? [Open an issue](https://github.com/iaminci/homebrew-netstat-macos/issues)
+2. **Feature Requests**: Want a new feature? [Request it here](https://github.com/iaminci/homebrew-netstat-macos/issues)
 3. **Pull Requests**: Code improvements welcome!
 
 ### Development Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/homebrew-netstat-macos.git
+git clone https://github.com/iaminci/homebrew-netstat-macos.git
 cd homebrew-netstat-macos
 
 # Test the formula
@@ -267,8 +267,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - [Homebrew Formula](Formula/netstat-macos.rb)
-- [Source Code](https://github.com/yourusername/netstat-macos-source)
-- [Issue Tracker](https://github.com/yourusername/homebrew-netstat-macos/issues)
+- [Source Code](https://github.com/iaminci/netstat-macos-source)
+- [Issue Tracker](https://github.com/iaminci/homebrew-netstat-macos/issues)
 - [Homebrew Documentation](https://docs.brew.sh/)
 
 ---
@@ -277,6 +277,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Star ⭐ this repository if it helped you!**
 
-[Report Bug](https://github.com/yourusername/homebrew-netstat-macos/issues) · [Request Feature](https://github.com/yourusername/homebrew-netstat-macos/issues) · [Contribute](https://github.com/yourusername/homebrew-netstat-macos/pulls)
+[Report Bug](https://github.com/iaminci/homebrew-netstat-macos/issues) · [Request Feature](https://github.com/iaminci/homebrew-netstat-macos/issues) · [Contribute](https://github.com/iaminci/homebrew-netstat-macos/pulls)
 
 </div>
