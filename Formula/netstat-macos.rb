@@ -101,9 +101,9 @@ class NetstatMacos < Formula
           
           # IPv4 TCP connections
           if [[ "$show_listening" == true ]]; then
-              sudo lsof -iTCP -sTCP:LISTEN -n -P 2>/dev/null | grep -v "IPv6" | tail -n +2
+              lsof -iTCP -sTCP:LISTEN -n -P 2>/dev/null | grep -v "IPv6" | tail -n +2
           else
-              sudo lsof -iTCP -n -P 2>/dev/null | grep -v "IPv6" | tail -n +2
+              lsof -iTCP -n -P 2>/dev/null | grep -v "IPv6" | tail -n +2
           fi | while IFS= read -r line; do
               if [[ -n "$line" ]]; then
                   cmd=$(echo "$line" | awk '{print $1}')
@@ -127,9 +127,9 @@ class NetstatMacos < Formula
           
           # IPv6 TCP connections
           if [[ "$show_listening" == true ]]; then
-              sudo lsof -iTCP -sTCP:LISTEN -n -P 2>/dev/null | grep "IPv6" | tail -n +2
+              lsof -iTCP -sTCP:LISTEN -n -P 2>/dev/null | grep "IPv6" | tail -n +2
           else
-              sudo lsof -iTCP -n -P 2>/dev/null | grep "IPv6" | tail -n +2
+              lsof -iTCP -n -P 2>/dev/null | grep "IPv6" | tail -n +2
           fi | while IFS= read -r line; do
               if [[ -n "$line" ]]; then
                   cmd=$(echo "$line" | awk '{print $1}')
@@ -157,7 +157,7 @@ class NetstatMacos < Formula
           local show_programs="$1"
           
           # IPv4 UDP connections
-          sudo lsof -iUDP -n -P 2>/dev/null | grep -v "IPv6" | tail -n +2 | while IFS= read -r line; do
+          lsof -iUDP -n -P 2>/dev/null | grep -v "IPv6" | tail -n +2 | while IFS= read -r line; do
               if [[ -n "$line" ]]; then
                   cmd=$(echo "$line" | awk '{print $1}')
                   pid=$(echo "$line" | awk '{print $2}')
@@ -178,7 +178,7 @@ class NetstatMacos < Formula
           done
           
           # IPv6 UDP connections
-          sudo lsof -iUDP -n -P 2>/dev/null | grep "IPv6" | tail -n +2 | while IFS= read -r line; do
+          lsof -iUDP -n -P 2>/dev/null | grep "IPv6" | tail -n +2 | while IFS= read -r line; do
               if [[ -n "$line" ]]; then
                   cmd=$(echo "$line" | awk '{print $1}')
                   pid=$(echo "$line" | awk '{print $2}')
@@ -304,7 +304,7 @@ class NetstatMacos < Formula
       
       if [[ $EUID -ne 0 && "$*" == *"p"* ]]; then
           echo "Warning: Running without sudo. Process names may not be available." >&2
-          echo "For full functionality, run: sudo netstat $*" >&2
+          echo "For full functionality, run: netstat $*" >&2
           echo "" >&2
       fi
       
@@ -320,7 +320,7 @@ class NetstatMacos < Formula
       This installs netstat-macos as 'netstat', which will override the system netstat.
       
       Usage examples:
-        sudo netstat -tulpn    # Show listening TCP/UDP ports with process info
+        netstat -tulpn    # Show listening TCP/UDP ports with process info
         netstat -tlp           # Show TCP listening ports with process info
         netstat -r             # Show routing table (uses native netstat)
         netstat -i             # Show interfaces (uses native netstat)
