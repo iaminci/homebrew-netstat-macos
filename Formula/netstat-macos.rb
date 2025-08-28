@@ -4,7 +4,7 @@ class NetstatMacos < Formula
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "MIT"
-  version "1.0.1"
+  version "1.0.2"
 
   depends_on "bash"
 
@@ -304,7 +304,7 @@ class NetstatMacos < Formula
       
       if [[ $EUID -ne 0 && "$*" == *"p"* ]]; then
           echo "Warning: Running without sudo. Process names may not be available." >&2
-          echo "For full functionality, run: netstat $*" >&2
+          echo "For full functionality, run: sudo netstat $*" >&2
           echo "" >&2
       fi
       
