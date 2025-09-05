@@ -14,14 +14,14 @@ class NetstatMacos < Formula
       #!/bin/bash
 
       # netstat replacement for macOS with Linux-compatible flags
-      # Version: 1.0.0
+      # Version: 1.0.3
 
-      VERSION="1.0.0"
+      VERSION="1.0.3"
 
       # Help function
       show_help() {
           cat << 'HELP'
-      netstat-macos 1.0.0 - Linux-compatible netstat for macOS
+      netstat-macos 1.0.3 - Linux-compatible netstat for macOS
 
       Usage: netstat [OPTIONS]
 
