@@ -27,7 +27,7 @@ class NetstatMacos < Formula
 
       Network statistics options:
         -t, --tcp         Display TCP connections
-        -u, --udp         Display UDP connections  
+        -u, --udp         Display UDP connections
         -l, --listening   Show only listening ports
         -n, --numeric     Show numerical addresses instead of resolving hosts
         -p, --programs    Show PID and name of programs
@@ -110,16 +110,16 @@ class NetstatMacos < Formula
                   pid=$(echo "$line" | awk '{print $2}')
                   local_addr=$(echo "$line" | awk '{print $9}')
                   state="LISTEN"
-                  
+
                   formatted_local=$(format_address "$local_addr" "ipv4")
                   foreign_addr=$(get_foreign_addr "ipv4")
-                  
+
                   if [[ "$show_programs" == true ]]; then
                       program_info="$pid/$cmd"
                   else
                       program_info=""
                   fi
-                  
+
                   printf "%-5s %6s %6s %-23s %-23s %-11s %s\\n" \\
                       "tcp" "0" "0" "$formatted_local" "$foreign_addr" "$state" "$program_info"
               fi
@@ -136,16 +136,16 @@ class NetstatMacos < Formula
                   pid=$(echo "$line" | awk '{print $2}')
                   local_addr=$(echo "$line" | awk '{print $9}')
                   state="LISTEN"
-                  
+
                   formatted_local=$(format_address "$local_addr" "ipv6")
                   foreign_addr=$(get_foreign_addr "ipv6")
-                  
+
                   if [[ "$show_programs" == true ]]; then
                       program_info="$pid/$cmd"
                   else
                       program_info=""
                   fi
-                  
+
                   printf "%-5s %6s %6s %-23s %-23s %-11s %s\\n" \\
                       "tcp6" "0" "0" "$formatted_local" "$foreign_addr" "$state" "$program_info"
               fi
@@ -162,16 +162,16 @@ class NetstatMacos < Formula
                   cmd=$(echo "$line" | awk '{print $1}')
                   pid=$(echo "$line" | awk '{print $2}')
                   local_addr=$(echo "$line" | awk '{print $9}')
-                  
+
                   formatted_local=$(format_address "$local_addr" "ipv4")
                   foreign_addr=$(get_foreign_addr "ipv4")
-                  
+
                   if [[ "$show_programs" == true ]]; then
                       program_info="$pid/$cmd"
                   else
                       program_info=""
                   fi
-                  
+
                   printf "%-5s %6s %6s %-23s %-23s %-11s %s\\n" \\
                       "udp" "0" "0" "$formatted_local" "$foreign_addr" "" "$program_info"
               fi
@@ -183,16 +183,16 @@ class NetstatMacos < Formula
                   cmd=$(echo "$line" | awk '{print $1}')
                   pid=$(echo "$line" | awk '{print $2}')
                   local_addr=$(echo "$line" | awk '{print $9}')
-                  
+
                   formatted_local=$(format_address "$local_addr" "ipv6")
                   foreign_addr=$(get_foreign_addr "ipv6")
-                  
+
                   if [[ "$show_programs" == true ]]; then
                       program_info="$pid/$cmd"
                   else
                       program_info=""
                   fi
-                  
+
                   printf "%-5s %6s %6s %-23s %-23s %-11s %s\\n" \\
                       "udp6" "0" "0" "$formatted_local" "$foreign_addr" "" "$program_info"
               fi
